@@ -1,0 +1,20 @@
+[
+    {
+        "id": "historia-cidade",
+        "title": "Conheca a historia da cidade",
+        "description": "Descricao do percurso com foco nas memorias, nos personagens e nos acontecimentos que moldaram Vassouras.",
+        "variant": "wide"
+    },
+    {
+        "id": "pontos-turisticos",
+        "title": "Explore pontos turisticos",
+        "description": "Descricao do percurso por cenarios marcantes, com leitura direta e objetiva, sem passar de 2 linhas.",
+        "variant": "narrow"
+    },
+    {
+        "id": "segredos-caminho",
+        "title": "Descubra segredos do caminho",
+        "description": "Descricao enxuta sobre pistas, detalhes do mapa e pequenas revelacoes espalhadas pela jornada.",
+        "variant": "narrow"
+    }
+]

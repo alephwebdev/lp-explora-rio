@@ -1,0 +1,56 @@
+[
+    {
+        "id": "protagonista",
+        "name": "Nome do Personagem",
+        "description": "Descricao do personagem bem direta e objetiva, sem ter mais de 2 linhas.",
+        "tags": [
+            "Personagem principal"
+        ],
+        "image": "/persons/personagem-principal.png",
+        "imageAlt": "Retrato do personagem principal"
+    },
+    {
+        "id": "samuel",
+        "name": "Seu Samuel",
+        "description": "Guardiao atento da memoria local, conduz a jornada com leitura precisa do territorio.",
+        "tags": [
+            "Guardiao",
+            "Morador"
+        ],
+        "image": null,
+        "imageAlt": "Retrato de Seu Samuel"
+    },
+    {
+        "id": "tereza",
+        "name": "Tereza Banguela",
+        "description": "Presenca marcante que abre camadas da historia com humor seco e visao afiada.",
+        "tags": [
+            "Aliada",
+            "Memoria viva"
+        ],
+        "image": null,
+        "imageAlt": "Retrato de Tereza Banguela"
+    },
+    {
+        "id": "mariana",
+        "name": "Mariana Crioula",
+        "description": "Guia de percurso e contexto, conecta o jogador aos detalhes humanos de Vassouras.",
+        "tags": [
+            "Guia",
+            "Exploradora"
+        ],
+        "image": null,
+        "imageAlt": "Retrato de Mariana Crioula"
+    },
+    {
+        "id": "barao",
+        "name": "Barao",
+        "description": "Figura de poder que tensiona a narrativa e revela as estruturas da epoca.",
+        "tags": [
+            "Antagonista",
+            "Elite"
+        ],
+        "image": null,
+        "imageAlt": "Retrato do Barao"
+    }
+]

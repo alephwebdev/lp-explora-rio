@@ -1,0 +1,26 @@
+[
+    {
+        "id": "jeniffer",
+        "role": "Programadora",
+        "name": "Jeniffer Xavier",
+        "description": "Transforma ideias em realidade virtual. Sua paixao da vida a mundos de jogos.",
+        "image": "/author/jeniffer.png",
+        "imageAlt": "Retrato de Jeniffer Xavier"
+    },
+    {
+        "id": "albram",
+        "role": "Game Designer",
+        "name": "Albram Ramos",
+        "description": "Com criatividade e estrategia, ele molda cada detalhe dos jogos, garantindo diversao e imersao total.",
+        "image": "/author/albram.png",
+        "imageAlt": "Retrato de Albram Ramos"
+    },
+    {
+        "id": "maira",
+        "role": "Modeladora 3D",
+        "name": "Maira Reis",
+        "description": "Cria mundos e personagens. Sua arte da vida aos jogos, transportando jogadores para novas realidades.",
+        "image": "/author/maira.png",
+        "imageAlt": "Retrato de Maira Reis"
+    }
+]

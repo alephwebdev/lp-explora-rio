@@ -1,0 +1,142 @@
+'use client'
+
+import styled from '@emotion/styled'
+import Image from 'next/image'
+
+export interface NewsItemData {
+    id: string
+    category: string
+    image: string
+    title: string
+    description: string
+}
+
+interface NewsCardProps {
+    item: NewsItemData
+    priority?: boolean
+}
+
+const Card = styled.article`
+    position: relative;
+    min-height: 26.75rem;
+    border-radius: 1.35rem;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f2e6d5 0%, #eadbc7 100%);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+    isolation: isolate;
+
+    .news-card__media {
+        position: absolute;
+        inset: 0;
+    }
+
+    .news-card__image {
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.2;
+        transform: scale(1.03);
+    }
+
+    .news-card__scrim {
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(242, 230, 213, 0.12) 45%, rgba(242, 230, 213, 0.88) 100%),
+            linear-gradient(180deg, rgba(20, 16, 12, 0) 30%, rgba(20, 16, 12, 0.08) 100%);
+    }
+
+    .news-card__content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.05rem 1.05rem 1rem;
+    }
+
+    .news-card__category {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        min-height: 1.8rem;
+        padding: 0.3rem 0.65rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.42);
+        color: #1e1a18;
+        font-size: 0.62rem;
+        line-height: 1;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .news-card__copy {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    .news-card__title {
+        max-width: 18rem;
+        color: #1f1c1b;
+        font-size: clamp(1.7rem, 2vw, 2.25rem);
+        line-height: 0.96;
+        font-weight: 400;
+        letter-spacing: -0.06em;
+    }
+
+    .news-card__title strong {
+        font-family: var(--font-lora);
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    .news-card__description {
+        max-width: 19rem;
+        color: rgba(31, 28, 27, 0.68);
+        font-size: 0.95rem;
+        line-height: 1.16;
+        letter-spacing: -0.02em;
+    }
+
+    @media (max-width: 767px) {
+        min-height: 24rem;
+
+        .news-card__title,
+        .news-card__description {
+            max-width: 100%;
+        }
+    }
+`
+
+export default function NewsCard({ item, priority = false }: NewsCardProps) {
+    const words = item.title.split(' ')
+    const lastWord = words.pop() ?? ''
+    const firstPart = words.join(' ')
+
+    return (
+        <Card>
+            <div className='news-card__media'>
+                <Image
+                    fill
+                    priority={priority}
+                    sizes='(max-width: 767px) 100vw, 50vw'
+                    src={item.image}
+                    alt={item.title}
+                    className='news-card__image'
+                />
+                <div className='news-card__scrim' />
+            </div>
+
+            <div className='news-card__content'>
+                <span className='news-card__category'>{item.category}</span>
+
+                <div className='news-card__copy'>
+                    <h3 className='news-card__title'>
+                        {firstPart} <strong>{lastWord}</strong>
+                    </h3>
+                    <p className='news-card__description'>{item.description}</p>
+                </div>
+            </div>
+        </Card>
+    )
+}
