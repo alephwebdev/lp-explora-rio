@@ -10,26 +10,34 @@ export default function SmoothScroll() {
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
         if (prefersReduced) return
 
+        const isMobile = window.matchMedia('(max-width: 767px)').matches
+
         gsap.registerPlugin(ScrollTrigger)
 
-        const lenis = new Lenis({
-            duration: 1.1,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smoothWheel: true,
-            wheelMultiplier: 1,
-            touchMultiplier: 1.2,
-        })
+        let lenis: Lenis | null = null
+        let tickerCallback: ((time: number) => void) | null = null
+        let handleScroll: (() => void) | null = null
 
-        const handleScroll = () => ScrollTrigger.update()
-        lenis.on('scroll', handleScroll)
+        if (!isMobile) {
+            lenis = new Lenis({
+                duration: 1.1,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smoothWheel: true,
+                wheelMultiplier: 1,
+                touchMultiplier: 1.2,
+            })
 
-        const tickerCallback = (time: number) => {
-            lenis.raf(time * 1000)
+            handleScroll = () => ScrollTrigger.update()
+            lenis.on('scroll', handleScroll)
+
+            tickerCallback = (time: number) => {
+                lenis!.raf(time * 1000)
+            }
+            gsap.ticker.add(tickerCallback)
+            gsap.ticker.lagSmoothing(0)
         }
-        gsap.ticker.add(tickerCallback)
-        gsap.ticker.lagSmoothing(0)
 
-        const reveals = gsap.utils.toArray<HTMLElement>('[data-reveal]')
+        const reveals = isMobile ? [] : gsap.utils.toArray<HTMLElement>('[data-reveal]')
         const revealTweens = reveals.map((el) => {
             const delay = parseFloat(el.dataset.revealDelay ?? '0')
             const y = parseFloat(el.dataset.revealY ?? '28')
@@ -56,9 +64,11 @@ export default function SmoothScroll() {
                 t.scrollTrigger?.kill()
                 t.kill()
             })
-            lenis.off('scroll', handleScroll)
-            gsap.ticker.remove(tickerCallback)
-            lenis.destroy()
+            if (lenis) {
+                if (handleScroll) lenis.off('scroll', handleScroll)
+                if (tickerCallback) gsap.ticker.remove(tickerCallback)
+                lenis.destroy()
+            }
         }
     }, [])
 

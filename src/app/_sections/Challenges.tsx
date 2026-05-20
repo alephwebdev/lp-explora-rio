@@ -237,21 +237,20 @@ export default function Challenges() {
 
             gsap.set(eyebrowRef.current, { opacity: 0, y: 20 })
 
+            const isDesktop = window.matchMedia('(min-width: 768px)').matches
+            const offsetsX = isDesktop ? offsetsXDesktop : offsetsXMobile
+            const offsetsY = isDesktop ? offsetsYDesktop : offsetsYMobile
+            const tilts = isDesktop ? tiltsDesktop : tiltsMobile
+
             const mid = (chars.length - 1) / 2
             chars.forEach((char, i) => {
                 const distance = i - mid
                 gsap.set(char, {
                     opacity: 0,
-                    x: distance * 28,
-                    y: 0,
-                    filter: 'blur(8px)',
+                    x: distance * (isDesktop ? 28 : 14),
+                    ...(isDesktop ? { filter: 'blur(8px)' } : {}),
                 })
             })
-
-            const isDesktop = window.matchMedia('(min-width: 768px)').matches
-            const offsetsX = isDesktop ? offsetsXDesktop : offsetsXMobile
-            const offsetsY = isDesktop ? offsetsYDesktop : offsetsYMobile
-            const tilts = isDesktop ? tiltsDesktop : tiltsMobile
 
             const tl = gsap.timeline({
                 defaults: { ease: 'power3.out' },
@@ -272,7 +271,7 @@ export default function Challenges() {
                     {
                         opacity: 1,
                         x: 0,
-                        filter: 'blur(0px)',
+                        ...(isDesktop ? { filter: 'blur(0px)' } : {}),
                         duration: 0.5,
                         ease: 'power3.out',
                         stagger: { each: 0.025, from: 'center' },
@@ -284,8 +283,8 @@ export default function Challenges() {
                     chars,
                     {
                         opacity: 0,
-                        x: (i) => (i - mid) * 40,
-                        filter: 'blur(6px)',
+                        x: (i) => (i - mid) * (isDesktop ? 40 : 20),
+                        ...(isDesktop ? { filter: 'blur(6px)' } : {}),
                         duration: 0.45,
                         ease: 'power2.in',
                         stagger: { each: 0.015, from: 'center' },

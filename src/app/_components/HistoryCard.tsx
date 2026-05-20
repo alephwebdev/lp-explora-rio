@@ -21,7 +21,6 @@ const Card = styled.article`
     flex: 0 0 100vw;
     height: 100vh;
     overflow: hidden;
-    isolation: isolate;
 
     .history-card__image {
         object-fit: cover;
@@ -33,9 +32,7 @@ const Card = styled.article`
         position: absolute;
         inset: 0;
         z-index: 1;
-        background:
-            linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 30%),
-            linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 55%);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 55%);
     }
 
     .history-card__inner {
@@ -56,7 +53,6 @@ const Card = styled.article`
         line-height: 0.95;
         font-weight: 400;
         letter-spacing: -0.06em;
-        text-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
     }
 
     .history-card__title strong {
@@ -70,14 +66,9 @@ const Card = styled.article`
         font-size: clamp(1rem, 1.4vw, 1.2rem);
         line-height: 1.3;
         letter-spacing: -0.02em;
-        text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     }
 
     @media (max-width: 767px) {
-        flex: 0 0 100vw;
-        height: 70vh;
-        height: 70svh;
-
         .history-card__inner {
             left: 1.2rem;
             right: 1.2rem;
