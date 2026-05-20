@@ -550,7 +550,7 @@ export default function Characters() {
                 </aside>
 
                 <section className='characters__showcase' aria-label='Destaques da experiencia'>
-                    <header className='characters__texts'>
+                    <header className='characters__texts' data-reveal>
                         <span className='characters__texts-call'>Experiencia incrivel</span>
                         <div className='characters__texts-content'>
                             <h1 className='characters__texts-content-title'>
@@ -562,7 +562,7 @@ export default function Characters() {
                         </div>
                     </header>
 
-                    <div className='characters__showcase-grid'>
+                    <div className='characters__showcase-grid' data-reveal>
                         {experienceShowcase.map((item, index) => (
                             <article
                                 key={item.id}

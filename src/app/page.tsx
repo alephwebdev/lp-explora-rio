@@ -15,7 +15,6 @@ export default function Home() {
       <main>
         <Hero />
         <Characters />
-        <Presentation />
         <Authors />
         <History />
         <News />

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(findstr /i \"lenis gsap\")",
+      "Bash(npm install *)"
+    ]
+  }
+}

@@ -171,18 +171,20 @@ export default function News() {
     const [searchTerm, setSearchTerm] = useState('')
 
     const normalizedSearch = searchTerm.trim().toLowerCase()
-    const filteredItems = newsItems.filter((item) => {
-        const matchesCategory = selectedCategory === 'Tudo' || item.category === selectedCategory
-        const haystack = `${item.category} ${item.title} ${item.description}`.toLowerCase()
-        const matchesSearch = normalizedSearch.length === 0 || haystack.includes(normalizedSearch)
+    const filteredItems = newsItems
+        .filter((item) => {
+            const matchesCategory = selectedCategory === 'Tudo' || item.category === selectedCategory
+            const haystack = `${item.category} ${item.title} ${item.description}`.toLowerCase()
+            const matchesSearch = normalizedSearch.length === 0 || haystack.includes(normalizedSearch)
 
-        return matchesCategory && matchesSearch
-    })
+            return matchesCategory && matchesSearch
+        })
+        .slice(0, 4)
 
     return (
         <Section id='novidades'>
             <div className='news__content'>
-                <header className='news__header'>
+                <header className='news__header' data-reveal>
                     <div className='news__headline'>
                         <span className='news__eyebrow'>Novas atualizacoes</span>
                         <h1 className='news__title'>
@@ -195,7 +197,7 @@ export default function News() {
                     </p>
                 </header>
 
-                <div className='news__toolbar'>
+                <div className='news__toolbar' data-reveal data-reveal-delay='0.1'>
                     <div className='news__filters' role='tablist' aria-label='Filtrar novidades por categoria'>
                         {categories.map((category) => {
                             const isActive = category === selectedCategory
@@ -231,7 +233,7 @@ export default function News() {
                 {filteredItems.length > 0 ? (
                     <div className='news__grid'>
                         {filteredItems.map((item, index) => (
-                            <NewsCard key={item.id} item={item} priority={index < 2} />
+                            <NewsCard key={item.id} item={item} priority={index < 4} />
                         ))}
                     </div>
                 ) : (

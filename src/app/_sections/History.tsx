@@ -11,7 +11,6 @@ import historyCardsData from '../_data/history-cards.json'
 const Section = styled.section`
     position: relative;
     width: 100%;
-    overflow: hidden;
     isolation: isolate;
 
     .history__bg,
@@ -40,22 +39,31 @@ const Section = styled.section`
     .history__content {
         position: relative;
         z-index: 1;
-        min-height: 100vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        gap: 2.3rem;
-        padding: 6rem 0 4rem;
+        overflow: hidden;
     }
 
     .history__header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 1rem;
         text-align: center;
-        padding: 0 1.5rem;
+        padding: 5rem 1.5rem 2rem;
+        background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%);
+        pointer-events: none;
+    }
+
+    .history__header > * {
+        pointer-events: auto;
     }
 
     .history__eyebrow {
@@ -97,26 +105,30 @@ const Section = styled.section`
 
     .history__viewport {
         width: 100%;
+        flex: 1;
         overflow: hidden;
     }
 
     .history__track {
         display: flex;
-        gap: 0.375rem;
-        width: max-content;
-        padding: 0 0.25rem 0 0;
+        width: 300vw;
+        height: 100%;
         will-change: transform;
     }
 
     @media (max-width: 767px) {
         .history__content {
-            min-height: auto;
-            gap: 1.8rem;
-            padding: 5rem 1rem 3.5rem;
+            height: auto;
+            overflow: visible;
         }
 
         .history__header {
-            padding: 0;
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            padding: 5rem 1rem 2rem;
+            background: none;
         }
 
         .history__title {
@@ -124,15 +136,17 @@ const Section = styled.section`
         }
 
         .history__viewport {
+            flex: none;
+            height: auto;
             overflow: visible;
         }
 
         .history__track {
             width: 100%;
             flex-direction: column;
-            gap: 0.75rem;
-            padding: 0;
+            height: auto;
         }
+
     }
 `
 
@@ -140,11 +154,12 @@ const historyCards = historyCardsData as HistoryCardData[]
 
 export default function History() {
     const sectionRef = useRef<HTMLElement | null>(null)
+    const contentRef = useRef<HTMLDivElement | null>(null)
     const viewportRef = useRef<HTMLDivElement | null>(null)
     const trackRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
-        if (!sectionRef.current || !viewportRef.current || !trackRef.current) {
+        if (!sectionRef.current || !contentRef.current || !viewportRef.current || !trackRef.current) {
             return
         }
 
@@ -153,34 +168,67 @@ export default function History() {
         const media = gsap.matchMedia()
 
         media.add('(min-width: 768px)', () => {
-            const section = sectionRef.current
-            const viewport = viewportRef.current
-            const track = trackRef.current
+            const content = contentRef.current!
+            const viewport = viewportRef.current!
+            const track = trackRef.current!
 
-            if (!section || !viewport || !track) {
-                return undefined
-            }
+            const getScrollDistance = () =>
+                Math.max(0, track.scrollWidth - viewport.offsetWidth)
 
-            const getDistance = () => Math.max(0, track.scrollWidth - viewport.offsetWidth)
-
-            const animation = gsap.to(track, {
-                x: () => -getDistance(),
-                ease: 'none',
+            const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: section,
+                    trigger: content,
                     start: 'top top',
-                    end: () => `+=${getDistance() + window.innerHeight * 0.35}`,
-                    scrub: 1,
+                    end: () => `+=${getScrollDistance()}`,
+                    scrub: 1.4,
                     pin: true,
                     anticipatePin: 1,
                     invalidateOnRefresh: true,
                 },
             })
 
+            tl.to(track, {
+                x: () => -getScrollDistance(),
+                ease: 'none',
+            })
+
             return () => {
-                animation.scrollTrigger?.kill()
-                animation.kill()
+                tl.scrollTrigger?.kill()
+                tl.kill()
                 gsap.set(track, { clearProps: 'transform' })
+            }
+        })
+
+        media.add('(max-width: 767px)', () => {
+            const track = trackRef.current!
+            const cards = Array.from(track.children) as HTMLElement[]
+            if (!cards.length) return
+
+            const tweens = cards.map((card) =>
+                gsap.fromTo(
+                    card,
+                    { opacity: 0, y: 60, scale: 0.96 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.9,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 82%',
+                            toggleActions: 'play none none reverse',
+                        },
+                    },
+                ),
+            )
+
+            return () => {
+                tweens.forEach((t) => {
+                    t.scrollTrigger?.kill()
+                    t.kill()
+                })
+                gsap.set(cards, { clearProps: 'all' })
             }
         })
 
@@ -203,7 +251,7 @@ export default function History() {
             </div>
             <div className='history__overlay' />
 
-            <div className='history__content'>
+            <div className='history__content' ref={contentRef}>
                 <header className='history__header'>
                     <span className='history__eyebrow'>Narrativa</span>
                     <h1 className='history__title'>

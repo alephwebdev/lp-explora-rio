@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "./_components/SmoothScroll";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -85,7 +86,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${lora.variable} ${instrumentSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

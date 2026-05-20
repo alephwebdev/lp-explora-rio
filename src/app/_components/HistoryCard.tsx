@@ -1,44 +1,62 @@
 'use client'
 
 import styled from '@emotion/styled'
+import Image from 'next/image'
 
 export interface HistoryCardData {
     id: string
     title: string
     description: string
     variant: 'wide' | 'narrow'
+    image: string
+    imageAlt: string
 }
 
 interface HistoryCardProps {
     card: HistoryCardData
 }
 
-const Card = styled.article<{ variant: HistoryCardData['variant'] }>`
+const Card = styled.article`
     position: relative;
-    flex: 0 0 ${({ variant }) => (variant === 'wide' ? 'min(79vw, 58rem)' : 'min(38vw, 22rem)')};
-    min-height: clamp(20rem, 48vh, 27rem);
-    border-radius: 0;
-    background: linear-gradient(180deg, #efe2cf 0%, #e7d8c3 100%);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+    flex: 0 0 100vw;
+    height: 100vh;
     overflow: hidden;
+    isolation: isolate;
+
+    .history-card__image {
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+    }
+
+    .history-card__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+            linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 30%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 55%);
+    }
 
     .history-card__inner {
         position: absolute;
-        left: 1.4rem;
-        right: 1.4rem;
-        bottom: 1.4rem;
+        z-index: 2;
+        left: clamp(1.5rem, 6vw, 6rem);
+        right: clamp(1.5rem, 6vw, 6rem);
+        bottom: clamp(2rem, 5vh, 4rem);
         display: flex;
         flex-direction: column;
-        gap: 0.45rem;
+        gap: 0.75rem;
+        max-width: 36rem;
     }
 
     .history-card__title {
-        max-width: ${({ variant }) => (variant === 'wide' ? '18rem' : '12rem')};
-        color: #23211f;
-        font-size: clamp(1.7rem, 2.2vw, 2.3rem);
+        color: #f7ecdc;
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
         line-height: 0.95;
         font-weight: 400;
         letter-spacing: -0.06em;
+        text-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
     }
 
     .history-card__title strong {
@@ -48,25 +66,22 @@ const Card = styled.article<{ variant: HistoryCardData['variant'] }>`
     }
 
     .history-card__description {
-        max-width: ${({ variant }) => (variant === 'wide' ? '24rem' : '14rem')};
-        color: rgba(35, 33, 31, 0.68);
-        font-size: 1rem;
-        line-height: 1.18;
+        color: rgba(247, 236, 220, 0.82);
+        font-size: clamp(1rem, 1.4vw, 1.2rem);
+        line-height: 1.3;
         letter-spacing: -0.02em;
+        text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     }
 
     @media (max-width: 767px) {
-        flex-basis: 100%;
-        min-height: 18rem;
+        flex: 0 0 100vw;
+        height: 70vh;
+        height: 70svh;
 
         .history-card__inner {
             left: 1.2rem;
             right: 1.2rem;
-            bottom: 1.2rem;
-        }
-
-        .history-card__title,
-        .history-card__description {
+            bottom: 1.5rem;
             max-width: 100%;
         }
     }
@@ -78,7 +93,15 @@ export default function HistoryCard({ card }: HistoryCardProps) {
     const firstPart = words.join(' ')
 
     return (
-        <Card variant={card.variant}>
+        <Card>
+            <Image
+                fill
+                src={card.image}
+                alt={card.imageAlt}
+                sizes='100vw'
+                className='history-card__image'
+            />
+            <div className='history-card__overlay' />
             <div className='history-card__inner'>
                 <h3 className='history-card__title'>
                     {firstPart} <strong>{lastWord}</strong>

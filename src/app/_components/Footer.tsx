@@ -276,7 +276,7 @@ const policyLinks = [
 export default function Footer() {
     return (
         <Wrapper id='contato'>
-            <section className='footer__cta'>
+            {/* <section className='footer__cta'>
                 <div className='footer__cta-media' aria-hidden='true'>
                     <video
                         className='footer__cta-video'
@@ -300,7 +300,7 @@ export default function Footer() {
                         <button className='footer__cta-button' type='button'>Baixar agora</button>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <div className='footer__main'>
                 <div className='footer__logo-wrap'>

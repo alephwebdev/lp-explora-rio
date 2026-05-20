@@ -196,7 +196,7 @@ export default function Presentation() {
             <div className='presentation__overlay' />
 
             <div className='presentation__content'>
-                <header className='presentation__header'>
+                <header className='presentation__header' data-reveal>
                     <span className='presentation__eyebrow'>Desafiador</span>
                     <h1 className='presentation__title'>
                         Combate de <strong>inteligencia</strong>, voce consegue?

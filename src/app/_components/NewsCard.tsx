@@ -21,8 +21,8 @@ const Card = styled.article`
     min-height: 26.75rem;
     border-radius: 1.35rem;
     overflow: hidden;
-    background: linear-gradient(180deg, #f2e6d5 0%, #eadbc7 100%);
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+    background: #0f1414;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
     isolation: isolate;
 
     .news-card__media {
@@ -33,16 +33,14 @@ const Card = styled.article`
     .news-card__image {
         object-fit: cover;
         object-position: center;
-        opacity: 0.2;
-        transform: scale(1.03);
     }
 
     .news-card__scrim {
         position: absolute;
         inset: 0;
         background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(242, 230, 213, 0.12) 45%, rgba(242, 230, 213, 0.88) 100%),
-            linear-gradient(180deg, rgba(20, 16, 12, 0) 30%, rgba(20, 16, 12, 0.08) 100%);
+            linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 30%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0) 55%);
     }
 
     .news-card__content {
@@ -59,11 +57,13 @@ const Card = styled.article`
         display: inline-flex;
         align-items: center;
         min-height: 1.8rem;
-        padding: 0.3rem 0.65rem;
+        padding: 0.35rem 0.7rem;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.42);
-        color: #1e1a18;
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(10px);
+        color: #f7ecdc;
         font-size: 0.62rem;
+        font-weight: 600;
         line-height: 1;
         letter-spacing: 0.04em;
         text-transform: uppercase;
@@ -77,11 +77,12 @@ const Card = styled.article`
 
     .news-card__title {
         max-width: 18rem;
-        color: #1f1c1b;
+        color: #f7ecdc;
         font-size: clamp(1.7rem, 2vw, 2.25rem);
         line-height: 0.96;
         font-weight: 400;
         letter-spacing: -0.06em;
+        text-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
     }
 
     .news-card__title strong {
@@ -92,10 +93,11 @@ const Card = styled.article`
 
     .news-card__description {
         max-width: 19rem;
-        color: rgba(31, 28, 27, 0.68);
+        color: rgba(247, 236, 220, 0.78);
         font-size: 0.95rem;
         line-height: 1.16;
         letter-spacing: -0.02em;
+        text-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     }
 
     @media (max-width: 767px) {

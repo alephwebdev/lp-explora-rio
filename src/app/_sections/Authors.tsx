@@ -210,7 +210,7 @@ export default function Authors() {
             <div className='authors__overlay' />
 
             <div className='authors__content'>
-                <header className='authors__header'>
+                <header className='authors__header' data-reveal>
                     <div className='authors__headline'>
                         <span className='authors__eyebrow'>Criadores</span>
                         <h1 className='authors__title'>
@@ -236,6 +236,7 @@ export default function Authors() {
                         centeredSlides
                         watchSlidesProgress
                         loop={authors.length > 3}
+                        initialSlide={1}
                         speed={900}
                         spaceBetween={18}
                         slidesPerView={1.08}
