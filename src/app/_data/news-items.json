@@ -1,37 +1,30 @@
 [
     {
-        "id": "mapa-principal",
+        "id": "mapa-de-missoes",
         "category": "Mapa",
-        "image": "/game/mapa-imersivo.png",
-        "title": "Novidade no mapa",
-        "description": "Nova area exploravel com percurso mais claro, pontos de interesse e leitura visual mais objetiva."
+        "image": "/game/novidade_mapa_de_missoes.jpeg",
+        "title": "Novo mapa de missoes",
+        "description": "Mapa de missoes com percurso mais claro, pontos de interesse e leitura visual mais objetiva."
     },
     {
-        "id": "personagem-criado",
+        "id": "novos-personagens",
         "category": "Personagens",
-        "image": "/game/emocao.png",
-        "title": "Personagem criado",
-        "description": "Novo personagem integrado a narrativa com funcao direta na progressao da aventura."
+        "image": "/game/novidade_novos_personagens.jpeg",
+        "title": "Novos personagens chegando",
+        "description": "Personagens inediots integrados a narrativa com papel direto na progressao da aventura."
     },
     {
-        "id": "gameplay-andar",
-        "category": "Gameplay",
-        "image": "/game/cidade.png",
-        "title": "Nova dinamica de andar",
-        "description": "Movimentacao refinada para deixar o percurso mais fluido e mais confortavel durante a exploracao."
+        "id": "novos-locais",
+        "category": "Locais",
+        "image": "/game/novidade_novos_locais.jpeg",
+        "title": "Novos locais para explorar",
+        "description": "Cenarios ineditos foram adicionados para ampliar a jornada por Vassouras."
     },
     {
-        "id": "build-estavel",
-        "category": "Build",
-        "image": "/game/narrativa.png",
-        "title": "Versao 14.29 lancada oficialmente",
-        "description": "Build mais estavel com ajustes de desempenho, melhorias visuais e correcao de fluxos principais."
-    },
-    {
-        "id": "feature-cenas",
-        "category": "Feature",
-        "image": "/game/diversao.png",
-        "title": "Cenas novas desbloqueadas",
-        "description": "Novas interacoes e detalhes de ambiente foram adicionados para ampliar a imersao do jogador."
+        "id": "novos-detalhes",
+        "category": "Detalhes",
+        "image": "/game/novidade_novos_detalhes.jpeg",
+        "title": "Novos detalhes no ambiente",
+        "description": "Refinamentos visuais e interacoes que enriquecem a imersao em cada cena."
     }
 ]

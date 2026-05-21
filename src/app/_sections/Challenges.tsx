@@ -1,6 +1,7 @@
 'use client'
 
 import styled from '@emotion/styled'
+import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -134,9 +135,11 @@ const ChallengeCard = styled.article`
         position: absolute;
         inset: 0;
         z-index: 0;
-        background:
-            radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.16), transparent 55%),
-            linear-gradient(160deg, #2a221c 0%, #4a3a2c 55%, #1a1410 100%);
+    }
+
+    .challenge-card__bg-image {
+        object-fit: cover;
+        object-position: center;
     }
 
     .challenge-card__overlay {
@@ -255,7 +258,7 @@ export default function Challenges() {
             const tl = gsap.timeline({
                 defaults: { ease: 'power3.out' },
                 scrollTrigger: {
-                    trigger: sectionRef.current,
+                    trigger: pinRef.current,
                     start: 'top top',
                     end: () => '+=' + window.innerHeight * (cards.length + 1),
                     scrub: 1.2,
@@ -357,7 +360,17 @@ export default function Challenges() {
                                 style={{ zIndex: i + 1 }}
                             >
                                 <ChallengeCard>
-                                    <div className='challenge-card__bg' />
+                                    <div className='challenge-card__bg'>
+                                        {item.image && (
+                                            <Image
+                                                fill
+                                                src={item.image}
+                                                alt={item.imageAlt}
+                                                sizes='(max-width: 767px) 80vw, 32vw'
+                                                className='challenge-card__bg-image'
+                                            />
+                                        )}
+                                    </div>
                                     <div className='challenge-card__overlay' />
                                     <div className='challenge-card__content'>
                                         <span className='challenge-card__role'>{item.role}</span>

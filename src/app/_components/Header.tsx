@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
+import { useFollowModal } from './FollowModalProvider'
 
 type NavItem = {
     label: string
@@ -416,6 +417,7 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false)
     const router = useRouter()
     const pathname = usePathname()
+    const { open: openFollowModal } = useFollowModal()
 
     const overlayRef = useRef<HTMLDivElement | null>(null)
     const panelRef = useRef<HTMLDivElement | null>(null)
@@ -635,8 +637,8 @@ export default function Header() {
                     </button>
                 </div>
 
-                <button type='button' className='header__download-button' onClick={() => handleNavigate('#contato')}>
-                    Baixar agora
+                <button type='button' className='header__download-button' onClick={openFollowModal}>
+                    Acompanhar projeto
                 </button>
             </div>
 
@@ -694,8 +696,15 @@ export default function Header() {
                                 <h2 className='header__preview-title'>
                                     Uma jornada <strong>imersiva</strong> por Vassouras
                                 </h2>
-                                <button type='button' className='header__preview-button' onClick={() => handleNavigate('#contato')}>
-                                    Entrar na experiencia
+                                <button
+                                    type='button'
+                                    className='header__preview-button'
+                                    onClick={() => {
+                                        closeMenu()
+                                        openFollowModal()
+                                    }}
+                                >
+                                    Acompanhar projeto
                                 </button>
                             </div>
                         </div>

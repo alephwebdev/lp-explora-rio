@@ -3,6 +3,7 @@
 import styled from '@emotion/styled'
 import Button from '../_components/Button'
 import Image from 'next/image'
+import { useFollowModal } from '../_components/FollowModalProvider'
 
 const Section = styled.section`
     width: 100%;
@@ -100,6 +101,7 @@ const Section = styled.section`
 `
 
 export default function Hero() {
+    const { open: openFollowModal } = useFollowModal()
     return (
         <Section id='inicio'>
             <div className='hero__bg'>
@@ -134,7 +136,7 @@ export default function Hero() {
                     </p>
                 </div>
                 <div className='hero__texts-buttons'>
-                    <Button variant='white'>Baixar agora</Button>
+                    <Button variant='white' onClick={openFollowModal}>Acompanhar projeto</Button>
                 </div>
             </main>
         </Section>

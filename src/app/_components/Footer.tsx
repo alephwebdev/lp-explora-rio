@@ -3,6 +3,7 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { DownloadSimple } from '@phosphor-icons/react'
+import { useFollowModal } from './FollowModalProvider'
 
 const Wrapper = styled.footer`
     width: 100%;
@@ -274,6 +275,7 @@ const policyLinks = [
 ]
 
 export default function Footer() {
+    const { open: openFollowModal } = useFollowModal()
     return (
         <Wrapper id='contato'>
             {/* <section className='footer__cta'>
@@ -297,7 +299,7 @@ export default function Footer() {
                         <h2 className='footer__cta-title'>
                             Jogue <strong>agora</strong> mesmo, e de graca!
                         </h2>
-                        <button className='footer__cta-button' type='button'>Baixar agora</button>
+                        <button className='footer__cta-button' type='button' onClick={openFollowModal}>Acompanhar projeto</button>
                     </div>
                 </div>
             </section> */}
@@ -348,11 +350,11 @@ export default function Footer() {
                     </section>
 
                     <section className='footer__column'>
-                        <h3 className='footer__column-title'>Downloads</h3>
-                        <a className='footer__download' href='#'>
+                        <h3 className='footer__column-title'>Acompanhe</h3>
+                        <button type='button' className='footer__download' onClick={openFollowModal}>
                             <DownloadSimple className='footer__download-icon' size={18} weight='regular' />
-                            <span className='footer__download-text'>Baixar agora</span>
-                        </a>
+                            <span className='footer__download-text'>Acompanhar projeto</span>
+                        </button>
                     </section>
                 </div>
 
