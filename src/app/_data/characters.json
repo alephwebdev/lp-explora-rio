@@ -1,8 +1,8 @@
 [
     {
         "id": "protagonista",
-        "name": "Nome do Personagem",
-        "description": "Descricao do personagem bem direta e objetiva, sem ter mais de 2 linhas.",
+        "name": "Você",
+        "description": "Explore Vassouras e enfrente os desafios para revelar a verdadeira história da cidade.",
         "tags": [
             "Personagem principal"
         ],
@@ -12,9 +12,9 @@
     {
         "id": "samuel",
         "name": "Seu Samuel",
-        "description": "Guardiao atento da memoria local, conduz a jornada com leitura precisa do territorio.",
+        "description": "Ajuda o jogador a entender as memórias esquecidas da cidade.",
         "tags": [
-            "Guardiao",
+            "Guardião",
             "Morador"
         ],
         "image": null,
@@ -23,10 +23,10 @@
     {
         "id": "tereza",
         "name": "Tereza Banguela",
-        "description": "Presenca marcante que abre camadas da historia com humor seco e visao afiada.",
+        "description": "Ajuda o jogador a sobreviver aos perigos do passado dentro da Igreja.",
         "tags": [
             "Aliada",
-            "Memoria viva"
+            "Memória viva"
         ],
         "image": null,
         "imageAlt": "Retrato de Tereza Banguela"
@@ -34,7 +34,7 @@
     {
         "id": "mariana",
         "name": "Mariana Crioula",
-        "description": "Guia de percurso e contexto, conecta o jogador aos detalhes humanos de Vassouras.",
+        "description": "Guia o jogador entre o passado e o presente durante toda a jornada histórica.",
         "tags": [
             "Guia",
             "Exploradora"
@@ -44,13 +44,13 @@
     },
     {
         "id": "barao",
-        "name": "Barao",
-        "description": "Figura de poder que tensiona a narrativa e revela as estruturas da epoca.",
+        "name": "Barão",
+        "description": "A sua influência controla a versão da história que o jogador precisa questionar.",
         "tags": [
-            "Antagonista",
-            "Elite"
+            "Vilão",
+            "Aristocrata"
         ],
         "image": null,
-        "imageAlt": "Retrato do Barao"
+        "imageAlt": "Retrato do Barão"
     }
 ]

@@ -129,10 +129,10 @@ export default function Hero() {
             <main className='hero__texts'>
                 <div className='hero__texts-content'>
                     <h1 className='hero__texts-content-title'>
-                        Explore a <strong>cidade</strong> de vassouras de forma imersiva
+                        Vassouras: nem toda <strong>história</strong> foi contada
                     </h1>
                     <p className='hero__texts-content-description'>
-                        Um projeto 100% fiel para a cidade mais visitada do estado do rio de janeiro com a historia mais legal
+                        Ao lado de Maria Crioula, devolva vida à cidade de Vassouras e conheça a verdade por trás das pedras que construíram o Vale do Café.
                     </p>
                 </div>
                 <div className='hero__texts-buttons'>

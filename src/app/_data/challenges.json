@@ -3,23 +3,23 @@
         "id": "desafio-1",
         "role": "Desafio 01",
         "name": "Decifre os enigmas",
-        "description": "Pistas escondidas pelo mapa testam sua atencao a detalhes historicos.",
+        "description": "Pistas escondidas pelo mapa testam a sua atenção.",
         "image": "/game/emocao.png",
         "imageAlt": "Cena de emocao dentro do jogo"
     },
     {
         "id": "desafio-2",
         "role": "Desafio 02",
-        "name": "Encontre os pontos",
-        "description": "Cada local visitado revela uma parte da narrativa de Vassouras.",
+        "name": "Explore a cidade",
+        "description": "Cada local visitado revela uma parte da verdadeira história de Vassouras.",
         "image": "/game/diversao.png",
         "imageAlt": "Cena de diversao no percurso"
     },
     {
         "id": "desafio-3",
         "role": "Desafio 03",
-        "name": "Complete a jornada",
-        "description": "Conclua todos os desafios para desbloquear o final da historia.",
+        "name": "Complete a jornada histórica",
+        "description": "Conclua todos os desafios para desbloquear o final da história.",
         "image": "/game/mapa-imersivo.png",
         "imageAlt": "Mapa imersivo da jornada"
     }

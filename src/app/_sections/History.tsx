@@ -179,9 +179,9 @@ export default function History() {
             <div className='history__overlay' />
 
             <header className='history__header'>
-                <span className='history__eyebrow'>Narrativa</span>
+                <span className='history__eyebrow'>A Narrativa</span>
                 <h1 className='history__title'>
-                    Criamos uma historia <strong>inesquecivel</strong>
+                    Descubra o passado de <strong>Vassouras</strong>
                 </h1>
                 <button className='history__button' type='button' onClick={openFollowModal}>
                     Acompanhar projeto

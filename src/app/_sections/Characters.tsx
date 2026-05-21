@@ -407,55 +407,55 @@ const experienceShowcase = experienceShowcaseData as Array<{
 }>
 const experienceBenefits = [
     {
-        id: 'device',
-        title: 'Disponivel para telefone',
-        description: 'Jogue em qualquer dispositivo celular.',
+        id: 'historico',
+        title: 'Baseado em acontecimentos históricos reais',
+        description: '',
         icon: DeviceTabletCamera,
     },
     {
-        id: 'tea',
-        title: 'Brindes na vida real',
-        description: 'Desenvolvido para aguenta em qualquer dispositivo.',
+        id: 'educativo',
+        title: 'Trajetória educativa',
+        description: '',
         icon: TeaBag,
     },
     {
-        id: 'timer',
-        title: 'Fiel a historia da cidade',
-        description: 'Foram feitas buscas pela cidade pessoalmente.',
+        id: 'mobile',
+        title: 'Disponível para dispositivos mobile',
+        description: '',
         icon: Timer,
     },
     {
-        id: 'person',
-        title: 'Livre para qualquer idade',
-        description: 'Qualquer pessoa de qualquer idade pode se divertir.',
+        id: 'classificacao',
+        title: 'Classificação indicativa: +10 anos',
+        description: '',
         icon: PersonSimple,
     },
 ] as const
 
 function renderBenefitTitle(id: (typeof experienceBenefits)[number]['id'], title: string) {
     switch (id) {
-        case 'device':
+        case 'historico':
             return (
                 <>
-                    Disponivel para <strong>telefone</strong>
+                    Baseado em acontecimentos <strong>históricos reais</strong>
                 </>
             )
-        case 'tea':
+        case 'educativo':
             return (
                 <>
-                    Brindes na <strong>vida real</strong>
+                    <strong>Trajetória</strong> educativa
                 </>
             )
-        case 'timer':
+        case 'mobile':
             return (
                 <>
-                    Fiel a historia da <strong>cidade</strong>
+                    Disponível para <strong>dispositivos mobile</strong>
                 </>
             )
-        case 'person':
+        case 'classificacao':
             return (
                 <>
-                    Livre para <strong>qualquer idade</strong>
+                    Classificação indicativa: <strong>+10 anos</strong>
                 </>
             )
         default:
@@ -480,13 +480,13 @@ export default function Characters() {
 
             <div className='characters__content'>
                 <header className='characters__texts'>
-                    <span className='characters__texts-call'>Nossos personagens</span>
+                    <span className='characters__texts-call'>Uma história apagada pelo tempo</span>
                     <div className='characters__texts-content'>
                         <h1 className='characters__texts-content-title'>
-                            Conheca com <strong>quem</strong> voce fara sua aventura
+                            O passado vive em <strong>cada personagem</strong>
                         </h1>
                         <p className='characters__texts-content-description'>
-                            Cada personagem tem um significado na historia e um papel essencial no percurso por Vassouras.
+                            Entre as memórias esquecidas, cada personagem revela uma nova parte da verdadeira história de Vassouras.
                         </p>
                     </div>
                 </header>
@@ -551,13 +551,13 @@ export default function Characters() {
 
                 <section className='characters__showcase' aria-label='Destaques da experiencia'>
                     <header className='characters__texts' data-reveal>
-                        <span className='characters__texts-call'>Experiencia incrivel</span>
+                        <span className='characters__texts-call'>Mais do que um jogo</span>
                         <div className='characters__texts-content'>
                             <h1 className='characters__texts-content-title'>
-                                Experiencia <strong>totalmente</strong> imersiva em Vassouras
+                                Uma aventura totalmente <strong>imersiva</strong> em Vassouras
                             </h1>
                             <p className='characters__texts-content-description'>
-                                Cada percurso mistura narrativa, exploracao e descoberta para manter a cidade viva em cada cena.
+                                A cada capítulo, Vassouras se transforma conforme as suas memórias são restauradas, revelando uma cidade viva, escondida sob o esquecimento.
                             </p>
                         </div>
                     </header>

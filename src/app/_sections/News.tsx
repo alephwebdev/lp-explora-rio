@@ -193,7 +193,7 @@ export default function News() {
                     </div>
 
                     <p className='news__copy'>
-                        Notas de atualizacoes, novidades, ideias, expansoes, todas as mais novas aquisicoes.
+                        Úiltimas novidades, melhorias e expansões do jogo.
                     </p>
                 </header>
 

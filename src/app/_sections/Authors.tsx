@@ -212,14 +212,14 @@ export default function Authors() {
             <div className='authors__content'>
                 <header className='authors__header' data-reveal>
                     <div className='authors__headline'>
-                        <span className='authors__eyebrow'>Criadores</span>
+                        <span className='authors__eyebrow'>Os criadores</span>
                         <h1 className='authors__title'>
-                            Quem esta por tras desse <strong>projeto</strong>?
+                            Conheça a equipe por trás desse <strong>projeto</strong>
                         </h1>
                     </div>
 
                     <p className='authors__copy'>
-                        Dedicados e empenhados para entregar uma experiencia incrivel para voce.
+                        A equipe que deu forma à narrativa e ao mundo do jogo.
                     </p>
                 </header>
 

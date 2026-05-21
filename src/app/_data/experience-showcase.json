@@ -1,35 +1,35 @@
 [
     {
         "id": "mapa-imersivo",
-        "title": "Mapa imersivo",
+        "title": "Mapa realista",
         "image": "/game/mapa-imersivo.png",
         "imageAlt": "Locomotiva em um cenario historico do jogo",
         "variant": "hero"
     },
     {
         "id": "narrativa",
-        "title": "Narrativa",
+        "title": "Narrativa imersiva",
         "image": "/game/narrativa.png",
         "imageAlt": "Igreja historica representada no jogo",
         "variant": "tall"
     },
     {
         "id": "diversao",
-        "title": "Diversao",
+        "title": "Exploração",
         "image": "/game/diversao.png",
         "imageAlt": "Fachada colorida modelada no universo do jogo",
         "variant": "stack-top"
     },
     {
         "id": "emocao",
-        "title": "Emocao",
+        "title": "Emoção",
         "image": "/game/emocao.png",
         "imageAlt": "Personagem do jogo em uma cena de destaque",
         "variant": "stack-bottom"
     },
     {
         "id": "cidade",
-        "title": "Se conecte com a cidade",
+        "title": "Conecte-se à história da cidade",
         "image": "/game/cidade.png",
         "imageAlt": "Praca central de Vassouras recriada no jogo",
         "variant": "footer"

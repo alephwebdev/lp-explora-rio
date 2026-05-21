@@ -3,28 +3,28 @@
         "id": "mapa-de-missoes",
         "category": "Mapa",
         "image": "/game/novidade_mapa_de_missoes.jpeg",
-        "title": "Novo mapa de missoes",
-        "description": "Mapa de missoes com percurso mais claro, pontos de interesse e leitura visual mais objetiva."
+        "title": "Novo mapa de missões",
+        "description": "Sistema de missões reorganizado com percurso mais intuitivo e melhor leitura visual."
     },
     {
         "id": "novos-personagens",
         "category": "Personagens",
         "image": "/game/novidade_novos_personagens.jpeg",
-        "title": "Novos personagens chegando",
-        "description": "Personagens inediots integrados a narrativa com papel direto na progressao da aventura."
+        "title": "Novos personagens adicionados",
+        "description": "Personagens inéditos integrados à narrativa, com papel direto na progressão da aventura."
     },
     {
         "id": "novos-locais",
-        "category": "Locais",
+        "category": "Cenários",
         "image": "/game/novidade_novos_locais.jpeg",
-        "title": "Novos locais para explorar",
-        "description": "Cenarios ineditos foram adicionados para ampliar a jornada por Vassouras."
+        "title": "Novos locais para exploração",
+        "description": "A cidade ganha novos espaços que aprofundam a experiência do jogador."
     },
     {
         "id": "novos-detalhes",
         "category": "Detalhes",
         "image": "/game/novidade_novos_detalhes.jpeg",
-        "title": "Novos detalhes no ambiente",
-        "description": "Refinamentos visuais e interacoes que enriquecem a imersao em cada cena."
+        "title": "Ambientes mais imersivos",
+        "description": "Refinamentos visuais e interações aprimoradas que aumentam a imersão em cada cena."
     }
 ]

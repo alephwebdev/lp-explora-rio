@@ -359,8 +359,8 @@ export default function Footer() {
                 </div>
 
                 <div className='footer__bottom'>
-                    <p>Explorario at 2026 Todos os direitos reservados.</p>
-                    <p className='footer__credit'>Projeto de: Aleph Ramos, Albram Ramos, Jeniffer, Maira, Wallace Proenca</p>
+                    <p>© 2026 ExploraRio Todos os direitos reservados.</p>
+                    <p className='footer__credit'>Um projeto por: Aleph Ramos, Alice Pereira, Albram Ramos, Jeniffer Xavier, Maira Reis e Wallace Proença</p>
                 </div>
             </div>
         </Wrapper>

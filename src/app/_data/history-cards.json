@@ -1,24 +1,24 @@
 [
     {
         "id": "historia-cidade",
-        "title": "Conheca a historia da cidade",
-        "description": "Descricao do percurso com foco nas memorias, nos personagens e nos acontecimentos que moldaram Vassouras.",
+        "title": "Conheça a verdadeira história da cidade",
+        "description": "Explore os acontecimentos inspirados na história real do Vale do Café.",
         "variant": "wide",
         "image": "/game/cidade.png",
         "imageAlt": "Vista da cidade de Vassouras"
     },
     {
         "id": "pontos-turisticos",
-        "title": "Explore pontos turisticos",
-        "description": "Descricao do percurso por cenarios marcantes, com leitura direta e objetiva, sem passar de 2 linhas.",
+        "title": "Explore os pontos turísticos",
+        "description": "Visite os locais históricos de Vassouras em uma experiência interativa.",
         "variant": "narrow",
         "image": "/game/mapa-imersivo.png",
         "imageAlt": "Mapa imersivo dos pontos turisticos"
     },
     {
         "id": "segredos-caminho",
-        "title": "Descubra segredos do caminho",
-        "description": "Descricao enxuta sobre pistas, detalhes do mapa e pequenas revelacoes espalhadas pela jornada.",
+        "title": "Revele os segredos ocultos",
+        "description": "Encontre os fragmentos do passado histórico da cidade.",
         "variant": "narrow",
         "image": "/game/narrativa.png",
         "imageAlt": "Narrativa da jornada"
