@@ -410,7 +410,7 @@ const experienceBenefits = [
         id: 'historico',
         title: 'Baseado em acontecimentos históricos reais',
         description: '',
-        icon: DeviceTabletCamera,
+        icon: Timer,
     },
     {
         id: 'educativo',
@@ -422,7 +422,7 @@ const experienceBenefits = [
         id: 'mobile',
         title: 'Disponível para dispositivos mobile',
         description: '',
-        icon: Timer,
+        icon: DeviceTabletCamera,
     },
     {
         id: 'classificacao',

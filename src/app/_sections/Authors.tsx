@@ -277,7 +277,7 @@ export default function Authors() {
                     <button className='authors__nav authors__carousel-prev' aria-label='Ver autor anterior'>
                         <CaretLeft size={22} weight='bold' />
                     </button>
-                    <button className='authors__nav authors__carousel-next' aria-label='Ver proximo autor'>
+                    <button className='authors__nav authors__carousel-next' aria-label='Ver próximo autor'>
                         <CaretRight size={22} weight='bold' />
                     </button>
                 </aside>

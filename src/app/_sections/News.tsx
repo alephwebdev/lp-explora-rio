@@ -186,14 +186,14 @@ export default function News() {
             <div className='news__content'>
                 <header className='news__header' data-reveal>
                     <div className='news__headline'>
-                        <span className='news__eyebrow'>Novas atualizacoes</span>
+                        <span className='news__eyebrow'>Novas atualizações</span>
                         <h1 className='news__title'>
                             Fique por <strong>dentro</strong> das novidades
                         </h1>
                     </div>
 
                     <p className='news__copy'>
-                        Úiltimas novidades, melhorias e expansões do jogo.
+                        Últimas novidades, melhorias e expansões do jogo.
                     </p>
                 </header>
 
@@ -224,7 +224,7 @@ export default function News() {
                             value={searchTerm}
                             onChange={(event) => setSearchTerm(event.target.value)}
                             className='news__search-input'
-                            placeholder='Procure por algo especifico'
+                            placeholder='Procure por algo específico'
                             aria-label='Buscar novidades'
                         />
                     </label>

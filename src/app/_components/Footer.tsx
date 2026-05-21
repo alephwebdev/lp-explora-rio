@@ -256,10 +256,10 @@ const Wrapper = styled.footer`
 `
 
 const siteMapLinks = [
-    { label: 'Inicio', href: '#' },
+    { label: 'Início', href: '#' },
     { label: 'Personagens', href: '#' },
-    { label: 'Imersao', href: '#' },
-    { label: 'Historia', href: '#' },
+    { label: 'Imersão', href: '#' },
+    { label: 'História', href: '#' },
     { label: 'Novidades', href: '#' },
     { label: 'Desafios', href: '#' },
 ]
@@ -270,8 +270,8 @@ const communityLinks = [
 ]
 
 const policyLinks = [
-    { label: 'Politica de privacidade', href: '#' },
-    { label: 'Termos e condicoes', href: '#' },
+    { label: 'Política de privacidade', href: '#' },
+    { label: 'Termos e condições', href: '#' },
 ]
 
 export default function Footer() {
@@ -339,7 +339,7 @@ export default function Footer() {
                     </section>
 
                     <section className='footer__column'>
-                        <h3 className='footer__column-title'>Politicas</h3>
+                        <h3 className='footer__column-title'>Políticas</h3>
                         <nav className='footer__links' aria-label='Politicas'>
                             {policyLinks.map((link) => (
                                 <a key={link.label} href={link.href} className='footer__link'>
@@ -360,7 +360,7 @@ export default function Footer() {
 
                 <div className='footer__bottom'>
                     <p>© 2026 ExploraRio Todos os direitos reservados.</p>
-                    <p className='footer__credit'>Um projeto por: Aleph Ramos, Alice Pereira, Albram Ramos, Jeniffer Xavier, Maira Reis e Wallace Proença</p>
+                    <p className='footer__credit'>Um projeto por: Albram Ramos, Aleph Ramos, Alice Pereira, Jeniffer Xavier, Maíra Reis e Wallace Proença.</p>
                 </div>
             </div>
         </Wrapper>

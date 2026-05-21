@@ -170,13 +170,13 @@ const presentationCards = [
     },
     {
         id: 'estrategia',
-        title: 'A estrategia e sua melhor amiga',
+        title: 'A estratégia é sua melhor amiga',
         description: 'Observe o ambiente, ligue as pistas e escolha com calma o melhor caminho para continuar.',
     },
     {
         id: 'gloria',
-        title: 'Ganhe e mostre ao mundo sua gloria',
-        description: 'Ao vencer os desafios, a experiencia recompensa seu dominio com progressao e reconhecimento.',
+        title: 'Ganhe e mostre ao mundo sua glória',
+        description: 'Ao vencer os desafios, a experiência recompensa seu domínio com progressão e reconhecimento.',
     },
 ] as const
 
@@ -199,7 +199,7 @@ export default function Presentation() {
                 <header className='presentation__header' data-reveal>
                     <span className='presentation__eyebrow'>Desafiador</span>
                     <h1 className='presentation__title'>
-                        Combate de <strong>inteligencia</strong>, voce consegue?
+                        Combate de <strong>inteligência</strong>, você consegue?
                     </h1>
                 </header>
 
